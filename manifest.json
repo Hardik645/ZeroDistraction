@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Zero Distraction",
+  "description": "extension that removes comments/recommendations from Youtube",
+  "version": "0.1",
+  "icons": {
+    "128": "extension_icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*"
+      ],
+      "js": [
+        "js/app.js"
+      ],
+      "css": [
+        "styles/style.css"
+      ],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "styles/style.css",
+        "images/search_icon.svg",
+        "images/youtube_logo.png",
+        "images/search_icon_dark.svg",
+        "images/youtube_logo_dark.png",
+        "images/extension_icon.png"
+
+      ],
+      "matches": [ "https://www.youtube.com/*" ]
+    }
+  ]
+}
